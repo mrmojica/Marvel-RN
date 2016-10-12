@@ -34,7 +34,8 @@ const styles = {
 	},
 	//text style
 	textStyle: {
-		fontSize: 20
+		fontSize: 20,
+		fontFamily: 'Menlo-BoldItalic'
 	}
 
 };

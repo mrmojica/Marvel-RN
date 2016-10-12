@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
-import CharacterList from './CharacterList';
+import CharacterList from './ListReducer';
+import SelectedCharacter from './SelectedReducer';
 
 
 export default combineReducers({
-	characterlist: CharacterList
+	characterList: CharacterList,
+	selectedCharacter: SelectedCharacter
 });
 

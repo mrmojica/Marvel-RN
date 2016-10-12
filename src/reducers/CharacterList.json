@@ -1,0 +1,121 @@
+[{
+   "id": 0,
+   "name": "Superman",
+   "fullName": "Clark Kent",
+   "race": "Kryptonian",
+   "occupation": "Reporter for the Daily Planet and novelist",
+   "powers": "Super strength, flight, invulnerability, super speed, heat vision, freeze breath, x-ray vision, superhuman hearing, healing factor",
+   "category": "Hero",
+   "video": "",
+   "image": "https://i.imgur.com/5ABd7t2.jpg"
+},
+{
+   "id": 1,
+   "name": "Spider-Man",
+   "fullName": "Peter Benjamin Parker",
+   "race": "Human",
+   "occupation": "Peter is an accomplished scientist, inventor and photographer.",
+   "powers": "Peter can cling to most surfaces, has superhuman strength and is roughly 15 times more agile than a regular human. His spider-sense provides an early warning detection system linked with his superhuman kinesthetics, enabling him the ability to evade most any injury.",
+   "category": "Hero",
+   "video": "",
+   "image": "https://upload.wikimedia.org/wikipedia/en/thumb/0/0c/Spiderman50.jpg/250px-Spiderman50.jpg"
+},
+{
+   "id": 2,
+   "name": "Batman",
+   "fullName": "Bruce Wayne",
+   "race": "Human",
+   "occupation": "Businessman (CEO of Wayne Enterprises)",
+   "powers": "Exceptional martial artist, combat strategy, inexhaustible wealth, brilliant deductive skill, advanced technology.",
+   "category": "Hero",
+   "video": "",
+   "image": "https://www.projectcasting.com/wp-content/uploads/2014/06/Batman-Comic-Books.jpg"
+},
+{
+   "id": 3,
+   "name": "Ironman",
+   "fullName": "Anthony Edward 'Tony' Stark",
+   "race": "Human",
+   "occupation": "Inventor, Industrialist; former United States Secretary of Defense",
+   "powers": "None; Tony has a genius level intellect that allows him to invent a wide range of sophisticated devices, specializing in advanced weapons and armor. He possesses a keen business mind.",
+   "category": "Hero",
+   "video": "",
+   "image": "https://upload.wikimedia.org/wikipedia/en/e/e0/Iron_Man_bleeding_edge.jpg"
+},
+{
+   "id": 4,
+   "name": "Captain America",
+   "fullName": "Steven 'Steve' Rogers",
+   "race": "Human",
+   "occupation": "crimefighter, (former) freelance artist",
+   "powers": "The Super-Soldier formula that he had metabolized had enhanced all of his bodily functions to the peak of human efficiency. Most notably, his body eliminates the excessive build-up of fatigue-producing poisons in his muscles, granting him phenomenal endurance.",
+   "category": "Hero",
+   "video": "",
+   "image": "https://upload.wikimedia.org/wikipedia/en/7/72/Steve_Rogers_Super_Soldier.jpg"
+},
+{
+   "id": 5,
+   "name": "Wonder Woman",
+   "fullName": "Diana of Themyscira",
+   "race": "Themyscira",
+   "occupation": "Adventurer, Emissary to the world of Man, Protector of Paradise Island; former Goddess of Truth",
+   "powers": "Super strength, invulnerability, flight, combat skill, combat strategy, superhuman agility, healing factor, magic weaponry",
+   "category": "Hero",
+   "video": "",
+   "image": "https://upload.wikimedia.org/wikipedia/en/b/b5/WonderWomanNew52.jpg"
+},
+{
+   "id": 6,
+   "name": "Wolverine",
+   "fullName": "James Howlett",
+   "race": "Mutant",
+   "occupation": "Adventurer, instructor, former bartender, bouncer, spy, government operative, mercenary, soldier, sailor, miner.",
+   "powers": "Wolverine is a mutant who possesses the ability to regenerate damaged or destroyed areas of his cellular structure at a rate far greater than that of an ordinary human. Wolverine's agility and reflexes are similarly enhanced.In addition, Wolverine’s healing factor provides him with an extended lifespan by slowing the effects of the aging process. Wolverine’s skeleton includes six retractable one-foot long bone claws, three in each arm.",
+   "category": "Hero",
+   "video": "",
+   "image": "https://upload.wikimedia.org/wikipedia/en/c/c8/Marvelwolverine.jpg"
+},
+{
+   "id": 7,
+   "name": "Flash",
+   "fullName": "",
+   "race": "",
+   "occupation": "",
+   "powers": "An object-oriented computer programming language commonly used to create interactive effects within web browsers.",
+   "category": "Hero",
+   "video": "",
+   "image": "https://kingofwallpapers.com/flash-wallpapers/flash-wallpapers-013.jpg"
+},
+{
+   "id": 8,
+   "name": "Thor",
+   "fullName": "Thor Odinson",
+   "race": "Asgardian",
+   "occupation": "King of Asgard",
+   "powers": "Thor's flesh and bones are several times denser than a human's.As Lord of Asgard, Thor possessed the Odinforce, which enabled him to tap into the near-infinite resources of cosmic and mystical energies, enhancing all of his abilities.",
+   "category": "Hero",
+   "video": "",
+   "image": "https://images3.alphacoders.com/235/235257.jpg"
+},
+{
+   "id": 9,
+   "name": "Hulk",
+   "fullName": "Robert Bruce Banner",
+   "race": "Human / Radiation",
+   "occupation": "Nuclear physicist",
+   "powers": "The Hulk possesses an incredible level of superhuman physical ability. His capacity for physical strength is potentially limitless due to the fact that the Hulk's strength increases proportionally with his level of great emotional stress, anger in particular. The Hulk uses his superhumanly strong leg muscles to leap great distances. ",
+   "category": "Hero",
+   "video": "",
+   "image": "https://s-media-cache-ak0.pinimg.com/originals/e8/8c/43/e88c4351b6833225e4b539a199b14d9a.jpg"
+},
+{
+   "id": 10,
+   "name": "Daredevil",
+   "fullName": "Matthew Michael Murdock",
+   "race": "Human",
+   "occupation": "Adventurer, vigilante, Attorney at Law, Leader of the Hand",
+   "powers": "In compensation for his lost sight, Daredevil’s other four senses have been preternaturally enhanced. Daredevil possesses the strength, speed, agility, and endurance, not to mention acrobatic and gymnastic skills, of an Olympic-level athlete.",
+   "category": "Hero",
+   "video": "",
+   "image": "https://66.media.tumblr.com/tumblr_m68l8ty1El1qhpx4lo1_500.jpg"
+}]
