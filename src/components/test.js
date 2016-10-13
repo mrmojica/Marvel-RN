@@ -8,9 +8,47 @@ import api from 'marvel-comics-api';
 import * as actions from '../actions/index';
 import { Button, Card, CardSection } from './common/Button';
 
-let request; 
+let data; 
 
 class Test extends Component {
+	constructor(props){
+		super(props);
+
+		//contain empty list of videos
+		this.state = {
+			list: []
+		};
+	this.fetchCharacterss = this.fetchCharacterss.bind(this);
+	}
+
+	// state = { list: [] };
+
+		fetchCharacterss() {
+	return api('characters', {
+  publicKey: '77d551b53edb687fab21d294a545a04a',
+  privateKey: '82802b5bacb24ed882a4c95a01c2af4fffa04a99',
+  timeout: 4000,
+  query: {
+    limit: 50
+  }
+}, (err, body) => {
+  if (err) throw err
+  console.log('body', body);
+  // total # of items 
+  console.log(body.data.total);
+  
+  // array of characters 
+  console.log(body.data.results);
+  data = body.data.results;
+  console.log('data',data);
+  // {data.map((item) => {
+		// 		return <Text>Hello</Text>
+		// 	})}
+
+	 this.setState({ list: body.data.results });
+
+});
+}
 
 	componentWillMount() {
 		// const PUBLIC_KEY = '77d551b53edb687fab21d294a545a04a';
@@ -21,35 +59,13 @@ class Test extends Component {
 		// let urlBase = `${url}?ts=${ts}&apikey=${PUBLIC_KEY}&hash=${hash}`;
 	 //    request = axios.get(urlBase);
 	 //    console.log('url', urlBase);
-	 this.props.fetchCharacters();
+	 // this.props.fetchCharacters();
+	 {this.fetchCharacterss()}
+	 // this.setState({ list: data });
 	}
 
 
-// 	fetchCharacters() {
-// 	return api('characters', {
-//   publicKey: '77d551b53edb687fab21d294a545a04a',
-//   privateKey: '82802b5bacb24ed882a4c95a01c2af4fffa04a99',
-//   timeout: 4000,
-//   query: {
-//     limit: 50
-//   }
-// }, function(err, body) {
-//   if (err) throw err
-//   console.log('body', body);
-//   // total # of items 
-//   console.log(body.data.total);
-  
-//   // array of characters 
-//   console.log(body.data.results);
-//   data = body.data.results;
-//   console.log('data',data);
-//   {data.map((item) => {
-// 				return <Text>Hello</Text>
-// 			})}
 
-
-// });
-// }
 
 
 
@@ -71,7 +87,7 @@ class Test extends Component {
 // <Component key={index} {...item} />
 
 	render() {
-
+		console.log('list', this.state.list);
 		// console.log('new data', data);
 		console.log('actions', this.props);
 		// console.log('characterlist from api', this.state.characterList);
