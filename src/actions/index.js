@@ -1,7 +1,8 @@
 import 'whatwg-fetch';
-import 'isomorphic-fetch';
+import fetch from 'isomorphic-fetch';
 import api from 'marvel-comics-api';
-// var md5 = require('md5');
+import md5 from 'md5';
+import axios from 'axios'
 
 // const PUBLIC_KEY = '77d551b53edb687fab21d294a545a04a';
 // const PRIVATE_KEY = '82802b5bacb24ed882a4c95a01c2af4fffa04a99';
@@ -18,6 +19,8 @@ import api from 'marvel-comics-api';
 
 // let ts = Date.now();
 // let hash = md5(ts + PRIVATE_KEY + PUBLIC_KEY);
+// let url = 'http://gateway.marvel.com/v1/public/characters';
+// let urlBase = `${url}?ts=${ts}&apikey=${PUBLIC_KEY}&hash=${hash}`;
 // let REQUEST_URL = 'http://gateway.marvel.com:80/v1/public/characters?ts=' + ts + '&apikey=' + PUBLIC_KEY + '&hash=' + hash + '&limit=' + LIMIT;
 
 // export function fetchData() {
@@ -58,9 +61,40 @@ export function fetchDataError(error) {
 	};
 }
 
+
+const PUBLIC_KEY = '77d551b53edb687fab21d294a545a04a';
+		const PRIVATE_KEY = '82802b5bacb24ed882a4c95a01c2af4fffa04a99';
+		let ts = Date.now();
+		let hash = md5(ts + PRIVATE_KEY + PUBLIC_KEY);
+		let url = 'http://gateway.marvel.com/v1/public/characters';
+		let urlBase = `${url}?ts=${ts}&apikey=${PUBLIC_KEY}&hash=${hash}`;
+	    request = axios.get(urlBase);
+
+export const FETCH_CHARACTERS = 'FETCH_CHARACTERS';
+export function fetchCharacters() {
+  return {
+      type: 'FETCH_CHARACTERS',
+      request: request
+  };
+};
+
+
+// export function fetchCharacters() {
+//   return function(dispatch) {
+//     axios.get(urlBase)
+//       .then((response) => {
+//         dispatch(fetchDataSuccess(response));
+//       })
+//       .catch((err) => {
+//         dispatch(fetchDataError(err));
+//       });
+//   };
+// }
+
+
 //try get this to work
 // export const fetchCharacters = function() {
-// 	return api('characters', {
+// 	return fetch(api('characters', {
 //   publicKey: '77d551b53edb687fab21d294a545a04a',
 //   privateKey: '82802b5bacb24ed882a4c95a01c2af4fffa04a99',
 //   timeout: 4000,
@@ -72,17 +106,48 @@ export function fetchDataError(error) {
 //   console.log('body', body);
 //   // total # of items 
 //   console.log(body.data.total);
-//   dispatch(FETCH_DATA_SUCCESS(body.data.results));
+//   // dispatch.fetchDataSuccess(body.data.results);
+//  // fetchDataSuccess(body.data.results);
   
 //   // array of characters 
 //   console.log(body.data.results);
-// }).catch(err);
+//   return body.data.results
+// })).then(function(data) {
+// 		return dispatch(
+// 			fetchDataSuccess(data)
+// 			);
+// 	}).catch(function(error) {
+
+//            return dispatch(
+//                fetchDataSuccess(error)
+//                );
+//            });
 // };
+
+// export const fetchCharacters = function() {
+// 	    fetch(urlBase, {
+//       method: 'get',
+//       body: JSON.stringify({
+//         text
+//       })
+//     }).then(response => {
+//     	         console.log("DATA", response);
+//            return dispatch(
+//                fetchDataSuccess(response)
+//                );
+    
+//     }).catch(err => {
+//     	 return dispatch(
+//                fetchDataSuccess(err)
+//            );
+//     });
+// }
+ 
 
 // export const fetchData = function() {
 //    return function(dispatch) {
-//        var url = comic_url;
-//        return fetch(url).then(function(response) {
+//        // var url = comic_url;
+//        return fetch(urlBase).then(function(response) {
 //            if (response.status < 200 || response.status >= 300) {
 //                var error = new Error(response.statusText);
 //                error.response = response;
