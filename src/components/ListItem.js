@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Text, TouchableWithoutFeedback, View, LayoutAnimation, Image, TouchableHighlight } from 'react-native';
+import { Text, TouchableWithoutFeedback, View, LayoutAnimation, Image, Linking } from 'react-native';
 import { connect } from 'react-redux';
-import { CardSection, Card } from './common';
+import { CardSection, Card, Button } from './common';
 //we use * as to import all actions from the action file
 import * as actions from '../actions';
 
@@ -46,6 +46,12 @@ class ListItem extends Component {
 					Type: {this.props.character.category}
 					</Text>
 				</CardSection>
+
+				<CardSection>
+				<Button onPress={() => Linking.openURL(this.props.character.video)}>
+				Video
+				</Button>
+			</CardSection>
 
 				</Card>
 			);
