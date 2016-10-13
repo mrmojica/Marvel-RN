@@ -8,7 +8,7 @@ import { Button, Card, CardSection } from './common/Button';
 
 let data; 
 
-class Test extends Component {
+// class Test extends Component {
 
 	fetchCharacters() {
 	return api('characters', {
@@ -28,6 +28,11 @@ class Test extends Component {
   console.log(body.data.results);
   data = body.data.results;
   console.log('data',data);
+  {data.map((item) => {
+				return <Text>Hello</Text>
+			})}
+
+
 });
 }
 
@@ -39,24 +44,25 @@ class Test extends Component {
 
 	//since we want listview to run the instant our component is about to render
 // 	componentWillMount() {
-// 		//boilerplate for listview (can find in the docs)
-// 		const ds = new ListView.DataSource({
-// 			rowHasChanged: (r1, r2) => r1 !== r2
-// 		});
-// 		//pass the data that you want to be within the listview
-// 		this.dataSource = ds.cloneWithRows(this.props.libraries);
+// // 		//boilerplate for listview (can find in the docs)
+// // 		const ds = new ListView.DataSource({
+// // 			rowHasChanged: (r1, r2) => r1 !== r2
+// // 		});
+// // 		//pass the data that you want to be within the listview
+// // 		this.dataSource = ds.cloneWithRows();
+// 		this.props.fetchCharacters
 // 	}
-// //the props library can be named anything, but is used to indicate 
-// //how many times we want listItem to duplicate using the value of the renderRow paramter
-// 	renderRow(library) {
-// 		return <ListItem library={library} />; 
-// 	}
+
+// <Component key={index} {...item} />
 
 	render() {
-		console.log(this.props);
+		console.log('new data', data);
+		console.log('actions', this.props);
 		//render the listview
+		// {this.fetchCharacters.bind(this)}
 		return (
-
+			
+			
 			<Button onPress={this.fetchCharacters}>
 				Test 
 			</Button>
@@ -68,7 +74,7 @@ class Test extends Component {
 
 // const mapStateToProps = state => {
 // 	//console.log(state);
-// 	return { libraries: state.libraries };
+// 	return { characterList: state.characterList };
 // };
 
 export default connect(null, actions)(Test);

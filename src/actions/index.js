@@ -58,6 +58,7 @@ export function fetchDataError(error) {
 	};
 }
 
+//try get this to work
 // export const fetchCharacters = function() {
 // 	return api('characters', {
 //   publicKey: '77d551b53edb687fab21d294a545a04a',
@@ -71,10 +72,11 @@ export function fetchDataError(error) {
 //   console.log('body', body);
 //   // total # of items 
 //   console.log(body.data.total);
+//   dispatch(FETCH_DATA_SUCCESS(body.data.results));
   
 //   // array of characters 
 //   console.log(body.data.results);
-// });
+// }).catch(err);
 // };
 
 // export const fetchData = function() {

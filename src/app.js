@@ -8,7 +8,7 @@ import MarvelList from './components/MarvelList';
 
 
 const App = () => {
-	//we set flex 1 style to view to say we want to take up as much space possible (full height)
+	//we set flex 1 style to view to take up as much space possible (full height/fix scroll)
 	return (
 		<Provider store={store}>
 			<View style={{ flex: 1 }}>
