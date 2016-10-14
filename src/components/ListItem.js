@@ -5,6 +5,8 @@ import { CardSection, Card, Button } from './common';
 //we use * as to import all actions from the action file
 import * as actions from '../actions';
 
+
+
 class ListItem extends Component {
 	//when user clicks selected item it will expand fade in animation
 	componentWillUpdate() {
@@ -29,6 +31,11 @@ class ListItem extends Component {
 	}
 
 	render() {
+		var url = this.props.data.thumbnail.path + '/portrait_small.' + this.props.data.thumbnail.extension;
+		var insert = 's';
+		var output = [url.slice(0, 4), insert, url.slice(4)].join('');
+		console.log('url', output);
+		// console.log('thumbnail', this.props.data.thumbnail.path + '/portrait_small.' + this.props.data.thumbnail.extension );
 		// console.log('actions', actions);
 		// console.log('selectcharacter function', this.props);
 		// console.log('character id', this.props.character.id);
@@ -42,7 +49,7 @@ class ListItem extends Component {
 					<CardSection>
 						<View style={styles.thumbnailContainerStyle}>
 						<Image 
-						source={{ uri: this.props.data.thumbnail.path }}
+						source={{ uri: this.props.data.thumbnail.path + '/portrait_small.' + this.props.data.thumbnail.extension }}
 						style={styles.thumbnailStyle}
 						/>
 						</View>
