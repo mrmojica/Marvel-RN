@@ -3,9 +3,8 @@ import { View } from 'react-native';
 import { Provider } from 'react-redux';
 import store from './store';
 import { Header } from './components/common';
-import Test from './components/test';
-
-// import MarvelList from './components/MarvelList';
+// import Test from './components/test';
+import MarvelList from './components/MarvelList';
 
 
 const App = () => {
@@ -14,7 +13,7 @@ const App = () => {
 		<Provider store={store}>
 			<View>
 				<Header headerText='Superheroes' />
-				<Test />
+				<MarvelList />
 			</View>
 		</Provider>
 	);

@@ -12,50 +12,21 @@ class ListItem extends Component {
 	}
 
 	renderDescription() {
-		if (this.props.expanded) {
-			console.log('matches');
+		// if (this.props.expanded) {
+		// 	console.log('matches');
 			//flex 1 will wrap the text content inside
 			return (
 				<Card>
 				<CardSection>
 					<Text style={{ flex: 1 }}>
-					Real Name: {this.props.character.fullName}
+					Real Name: {this.props.data.name}
 					</Text>
 				</CardSection>
 
-				<CardSection>
-					<Text style={{ flex: 1 }}>
-					Race: {this.props.character.race}
-					</Text>
-				</CardSection>
-
-				<CardSection>
-					<Text style={{ flex: 1 }}>
-					Powers: {this.props.character.powers}
-					</Text>
-				</CardSection>
-
-				<CardSection>
-					<Text style={{ flex: 1 }}>
-					Occupation: {this.props.character.occupation}
-					</Text>
-				</CardSection>
-
-				<CardSection>
-					<Text style={{ flex: 1 }}>
-					Type: {this.props.character.category}
-					</Text>
-				</CardSection>
-
-				<CardSection>
-				<Button onPress={() => Linking.openURL(this.props.character.video)}>
-				Video
-				</Button>
-			</CardSection>
 
 				</Card>
 			);
-		}
+		// }
 	}
 
 	render() {
@@ -63,23 +34,11 @@ class ListItem extends Component {
 		// console.log('selectCharacter function', this.props);
 		// console.log('character id', this.props.character.id);
 		// console.log('selected character id', this.props.selectedCharacterId);
-
+		console.log('listitem data', this.props.data);
 		return (
-			<TouchableWithoutFeedback
-				onPress={() => this.props.selectCharacter(this.props.character.id)}
-			>
+			<TouchableWithoutFeedback>
+
 				<View>
-					<CardSection>
-						<View style={styles.thumbnailContainerStyle}>
-						<Image 
-						source={{ uri: this.props.character.image }}
-						style={styles.thumbnailStyle}
-						/>
-						</View>
-						<View style={styles.headerContentStyle}>
-						<Text style={{ fontFamily: 'Menlo-BoldItalic' }}>{this.props.character.name}</Text>
-						</View>
-					</CardSection>
 					{this.renderDescription()}
 				</View>
 			</TouchableWithoutFeedback>
@@ -123,10 +82,7 @@ const styles = {
 };
 
 const mapStateToProps = (state, ownProps) => {
-	//checks if selected id matches to character id
-	const expanded = state.selectedCharacter === ownProps.character.id;
-
-	return { expanded };
+return { characterList: state.characterList };
 };
 
 //pass null in first argument if we are not using mapstatetoprops.
