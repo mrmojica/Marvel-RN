@@ -12,7 +12,7 @@ const App = () => {
 	return (
 		<Provider store={store}>
 			<View style={{ flex: 1 }}>
-				<Header headerText='Superheroes' />
+				<Header headerText='Marvel' />
 				<MarvelList />
 			</View>
 		</Provider>

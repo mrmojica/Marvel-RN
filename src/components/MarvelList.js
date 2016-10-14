@@ -27,7 +27,7 @@ class MarvelList extends Component {
   privateKey: '82802b5bacb24ed882a4c95a01c2af4fffa04a99',
   timeout: 4000,
   query: {
-    limit: 50
+    limit: 100
   }
   // changed callback to a arrow function to fix "this.setState not a function"
   //arrow functions binds your context for you and the syntax
@@ -68,10 +68,15 @@ class MarvelList extends Component {
 	// 	return <ListItem character={character} />; 
 	// }
 
+//used map to render api data
+//uncomment if condition to display characters with a description only
 	renderData() {
-		return this.state.list.map(index => 
-			<ListItem key={index.id} data={index} />
-			);
+		return this.state.list.map(index => {
+			// if (index.description !== '') { 
+			return <ListItem key={index.id} data={index} />
+		// }
+
+			});
 	}
 
 	render() {
