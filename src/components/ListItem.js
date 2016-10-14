@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, TouchableWithoutFeedback, View, LayoutAnimation, Image, Linking } from 'react-native';
+import { Text, TouchableWithoutFeedback, View, LayoutAnimation, Image, Linking, ScrollView } from 'react-native';
 import { connect } from 'react-redux';
 import { CardSection, Card, Button } from './common';
 //we use * as to import all actions from the action file
@@ -31,6 +31,7 @@ class ListItem extends Component {
 	}
 
 	render() {
+		//cconverted http thumbnail url to https
 		var url = this.props.data.thumbnail.path + '/portrait_small.' + this.props.data.thumbnail.extension;
 		var insert = 's';
 		var output = [url.slice(0, 4), insert, url.slice(4)].join('');
@@ -42,6 +43,7 @@ class ListItem extends Component {
 		// console.log('selected character id', this.props.selectedCharacterId);
 
 		return (
+			
 			<TouchableWithoutFeedback
 				onPress={() => this.props.selectCharacter(this.props.data.id)}
 			>
@@ -49,7 +51,7 @@ class ListItem extends Component {
 					<CardSection>
 						<View style={styles.thumbnailContainerStyle}>
 						<Image 
-						source={{ uri: this.props.data.thumbnail.path + '/portrait_small.' + this.props.data.thumbnail.extension }}
+						source={{ uri: output }}
 						style={styles.thumbnailStyle}
 						/>
 						</View>
@@ -60,6 +62,7 @@ class ListItem extends Component {
 					{this.renderDescription()}
 				</View>
 			</TouchableWithoutFeedback>
+	
 		);
 	}
 }
