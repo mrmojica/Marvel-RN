@@ -12,33 +12,44 @@ class ListItem extends Component {
 	}
 
 	renderDescription() {
-		// if (this.props.expanded) {
-		// 	console.log('matches');
+		if (this.props.expanded) {
+			console.log('matches');
 			//flex 1 will wrap the text content inside
 			return (
 				<Card>
 				<CardSection>
 					<Text style={{ flex: 1 }}>
-					Real Name: {this.props.data.name}
+					Description: {this.props.data.description}
 					</Text>
 				</CardSection>
 
-
 				</Card>
 			);
-		// }
+		}
 	}
 
 	render() {
 		// console.log('actions', actions);
-		// console.log('selectCharacter function', this.props);
+		// console.log('selectcharacter function', this.props);
 		// console.log('character id', this.props.character.id);
 		// console.log('selected character id', this.props.selectedCharacterId);
-		console.log('listitem data', this.props.data);
-		return (
-			<TouchableWithoutFeedback>
 
+		return (
+			<TouchableWithoutFeedback
+				onPress={() => this.props.selectCharacter(this.props.data.id)}
+			>
 				<View>
+					<CardSection>
+						<View style={styles.thumbnailContainerStyle}>
+						<Image 
+						source={{ uri: this.props.data.thumbnail.path }}
+						style={styles.thumbnailStyle}
+						/>
+						</View>
+						<View style={styles.headerContentStyle}>
+						<Text style={{ fontFamily: 'Menlo-BoldItalic' }}>{this.props.data.name}</Text>
+						</View>
+					</CardSection>
 					{this.renderDescription()}
 				</View>
 			</TouchableWithoutFeedback>
@@ -82,7 +93,10 @@ const styles = {
 };
 
 const mapStateToProps = (state, ownProps) => {
-return { characterList: state.characterList };
+	//checks if selected id matches to character id
+	const expanded = state.selectedCharacter === ownProps.data.id;
+
+	return { expanded };
 };
 
 //pass null in first argument if we are not using mapstatetoprops.
