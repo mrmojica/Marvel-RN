@@ -56,7 +56,7 @@ class MarvelList extends Component {
 		//pass the data that you want to be within the listview
 		this.dataSource = ds.cloneWithRows(this.props.characterList);
 	}
-//the props character can be named anything, but is used to indicate 
+//the arguement/attribute character can be named anything, but is used to indicate 
 //how many times we want listItem to duplicate using the value of the renderRow paramter
 	renderRow(character) {
 		return <ListItem character={character} />; 

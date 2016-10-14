@@ -14,10 +14,11 @@ class Test extends Component {
 	constructor(props){
 		super(props);
 
-		//contain empty list of videos
+		
 		this.state = {
 			list: []
 		};
+		//binding the function to fix "this.setState not a function"
 	this.fetchCharacterss = this.fetchCharacterss.bind(this);
 	}
 
@@ -31,6 +32,8 @@ class Test extends Component {
   query: {
     limit: 50
   }
+  // changed callback to a arrow function to fix "this.setState not a function"
+  //arrow functions binds your context for you and the syntax
 }, (err, body) => {
   if (err) throw err
   console.log('body', body);
