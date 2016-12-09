@@ -9,6 +9,7 @@ A mobile Superheroes database application that allows users to find information 
 - install node
 - install watchman
 - install -g react-native-cli
+- Xcode and Andriod Studio
 
 - Run simulator: Go to project directory and run the following commands in the terminal,
   - react-native run-ios (for IOS)
